@@ -46,7 +46,7 @@ class _DetailsState extends State<Details> {
                     spacing: 5,
                     children: [
                       Icon(Icons.star, color: Colors.purple),
-                      CustomText(
+                      CustomText( //customtext
                         text: "4.5",
                         fWeight: FontWeight.bold,
                         color: Colors.red,
