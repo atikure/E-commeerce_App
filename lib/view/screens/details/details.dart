@@ -21,6 +21,7 @@ class _DetailsState extends State<Details> {
       appBar: AppBar(actions: [CustomCard(), SizedBox(height: 10)]),
       body: SingleChildScrollView(
         child: Column(
+          // Column
           children: [
             productImageSlider(),
             SizedBox(height: 10),
