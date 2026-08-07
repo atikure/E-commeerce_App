@@ -14,10 +14,12 @@ class Home extends StatefulWidget {
   @override
   State<Home> createState() => _HomeState();
 }
+
 class _HomeState extends State<Home> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      //drawer
       drawer: Drawer(),
       appBar: AppBar(
         title: Row(
