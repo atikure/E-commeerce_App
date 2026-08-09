@@ -70,7 +70,7 @@ class _SetNewPasswordScreenState extends State<SetNewPasswordScreen> {
               ),
                SizedBox(height: 24),
 
-              // New
+              // New Password
               CustomTextField(
                 email: newPass,
                 hint: "New Password",
