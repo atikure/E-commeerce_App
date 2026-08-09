@@ -4,6 +4,7 @@ import 'package:ecommerce_app/view/screens/home/home.dart';
 import 'package:ecommerce_app/view/screens/login.dart';
 import 'package:ecommerce_app/view/screens/new_pass.dart';
 import 'package:ecommerce_app/view/screens/otp.dart';
+import 'package:ecommerce_app/view/screens/splash.dart';
 import 'package:flutter/material.dart';
 import 'package:ecommerce_app/view/screens/all_products/all_product.dart';
 
@@ -19,7 +20,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      home: SetNewPasswordScreen(),
+      home: SplashScreen(),
     ) ;
   }
 }

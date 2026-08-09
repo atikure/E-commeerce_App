@@ -13,9 +13,17 @@ class _ForgotScreenState extends State<ForgotScreen> {
   TextEditingController email = TextEditingController();
   bool phone = true;
 
+  int? mLine;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: AppBar(
+        leading: IconButton(
+          icon: Icon(Icons.arrow_back, color: Colors.black),
+          onPressed: () => Navigator.pop(context),
+        ),
+      ),
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
@@ -32,7 +40,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
           ),
           SizedBox(height: 15),
           CustomText(
-            text: "Enter the email or phone number associated with your account.",
+            text:
+                "Enter the email or phone number associated with your account.",
             fSize: 17,
           ),
           SizedBox(height: 10),
@@ -40,11 +49,11 @@ class _ForgotScreenState extends State<ForgotScreen> {
           Container(
             height: 50,
             decoration: BoxDecoration(
-              color: const Color(0xFFF5F5F5),
+              color: Color(0xFFF5F5F5),
               borderRadius: BorderRadius.circular(10),
             ),
             child: Padding(
-              padding: const EdgeInsets.all(8.0),
+              padding: EdgeInsets.all(8.0),
               child: Row(
                 children: [
                   Expanded(
@@ -54,22 +63,13 @@ class _ForgotScreenState extends State<ForgotScreen> {
                         decoration: BoxDecoration(
                           color: phone ? Colors.white : Colors.transparent,
                           borderRadius: BorderRadius.circular(10),
-                          border: phone
-                              ? Border.all(
-                                  color: const Color(0xFFFF5722),
-                                  width: 1.5,
-                                )
-                              : null,
+                          border: phone ? Border.all(color: Color(0xFFFF5722), width: 1.5) : null,
                         ),
                         alignment: Alignment.center,
-                        child: Text(
-                          'Phone',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: phone
-                                ? const Color(0xFFFF5722)
-                                : Colors.black,
-                          ),
+                        child: CustomText(
+                          text: "Phone",
+                          fWeight: FontWeight.bold,
+                          color: phone ? Colors.deepOrange : Colors.black,
                         ),
                       ),
                     ),
@@ -82,21 +82,15 @@ class _ForgotScreenState extends State<ForgotScreen> {
                           color: !phone ? Colors.white : Colors.transparent,
                           borderRadius: BorderRadius.circular(10),
                           border: !phone
-                              ? Border.all(
-                                  color: const Color(0xFFFF5722),
-                                  width: 1.5,
-                                )
+                              ? Border.all(color: Colors.deepOrange, width: 1.5)
                               : null,
                         ),
                         alignment: Alignment.center,
-                        child: Text(
-                          'Email',
-                          style: TextStyle(
-                            fontWeight: FontWeight.bold,
-                            color: !phone
-                                ? const Color(0xFFFF5722)
-                                : Colors.black,
-                          ),
+                        child: CustomText(
+                          text: "Email",
+                          fWeight: FontWeight.bold,
+                          color: !phone ? Colors.deepOrange : Colors.black,
+                          fSize: 15,
                         ),
                       ),
                     ),
@@ -106,45 +100,13 @@ class _ForgotScreenState extends State<ForgotScreen> {
             ),
           ),
           Padding(
-            padding: const EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(8.0),
             child: Align(
               alignment: Alignment.centerLeft,
-              child:
-              Text(
-                phone ? 'Phone Number' : 'Email Address',
-                style: const TextStyle(
-                  fontWeight: FontWeight.bold,
-                  fontSize: 14,
-                ),
-              ),
-            ),
-          ),
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: TextField(
-              controller: email,
-              keyboardType: phone
-                  ? TextInputType.phone
-                  : TextInputType.emailAddress,
-              decoration: InputDecoration(
-                prefixIcon: Icon(
-                  phone ? Icons.call_outlined : Icons.email_outlined,
-                  color: Colors.black,
-                ),
-
-                contentPadding: const EdgeInsets.symmetric(vertical: 16),
-                border: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
-                ),
-                enabledBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(color: Color(0xFFE0E0E0)),
-                ),
-                focusedBorder: OutlineInputBorder(
-                  borderRadius: BorderRadius.circular(20),
-                  borderSide: const BorderSide(color: Color(0xFFFF5722)),
-                ),
+              child: CustomTextField(
+                email: email,
+                hint: phone ? "Phone Number" : "Email Address",
+                prefixIcon: Icon(phone ? Icons.phone : Icons.email),
               ),
             ),
           ),
@@ -158,10 +120,11 @@ class _ForgotScreenState extends State<ForgotScreen> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Send OTP",
-                      style: TextStyle(color: Colors.white, fontSize: 15),
+                    padding: EdgeInsets.all(8.0),
+                    child: CustomText(
+                      text: "Send OTP",
+                      fSize: 15,
+                      color: Colors.white,
                     ),
                   ),
                 ],

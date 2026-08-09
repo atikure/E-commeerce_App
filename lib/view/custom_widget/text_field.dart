@@ -9,14 +9,15 @@ class CustomTextField extends StatelessWidget {
     this.suffixIcon,
     this.prefixIcon,
 
+
+
   });
 
   TextEditingController email;
   String hint;
-  int ? mLine;
-  Widget ? suffixIcon;
-  Widget ? prefixIcon;
-
+  int? mLine;
+  Widget? suffixIcon;
+  Widget? prefixIcon;
   @override
   Widget build(BuildContext context) {
     return Padding(
@@ -28,7 +29,7 @@ class CustomTextField extends StatelessWidget {
           hintText: hint,
           suffixIcon: suffixIcon,
           prefixIcon: prefixIcon,
-          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20),),
+          border: OutlineInputBorder(borderRadius: BorderRadius.circular(20)),
         ),
       ),
     );

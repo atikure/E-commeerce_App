@@ -1,3 +1,4 @@
+import 'package:ecommerce_app/view/custom_widget/text.dart';
 import 'package:flutter/material.dart';
 import '../custom_widget/text_field.dart';
 import 'login.dart';
@@ -20,26 +21,39 @@ class _RegScreenState extends State<RegScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Text(
-            "Create Account",
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-              color: Colors.black,
-              fontSize: 30,
-            ),
+          CustomText(
+            text: "Create Account",
+            fSize: 30,
+            fWeight: FontWeight.bold,
           ),
-          Text(
-            "Sing up to get started",
-            style: TextStyle(
-              color: Colors.black,
-              fontSize: 15,
-            ),
+          CustomText(text: "Sing up to get started", fSize: 15),
+          CustomTextField(
+            email: name,
+            hint: "Full Name",
+            prefixIcon: Icon(Icons.person),
           ),
-          CustomTextField(email: name, hint: "Full Name"),
-          CustomTextField(email: email, hint: "Email"),
-          CustomTextField(email: phone, hint: "Phone Number"),
-          CustomTextField(email: password, hint: "Password"),
-          CustomTextField(email: password, hint: "Confirm Password"),
+          CustomTextField(
+            email: email,
+            hint: "Email",
+            prefixIcon: Icon(Icons.mail),
+          ),
+          CustomTextField(
+            email: phone,
+            hint: "Phone Number",
+            prefixIcon: Icon(Icons.phone),
+          ),
+          CustomTextField(
+            email: password,
+            hint: "Password",
+            prefixIcon: Icon(Icons.lock_outlined),
+            suffixIcon: Icon(Icons.visibility_off_outlined),
+          ),
+          CustomTextField(
+            email: password,
+            hint: "Confirm Password",
+            prefixIcon: Icon(Icons.lock_outlined),
+            suffixIcon: Icon(Icons.visibility_off_outlined),
+          ),
 
           InkWell(
             onTap: () {
@@ -47,16 +61,13 @@ class _RegScreenState extends State<RegScreen> {
             },
             child: Card(
               margin: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-              color: Colors.blue,
+              color: Colors.deepOrangeAccent,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text(
-                      "Register",
-                      style: TextStyle(color: Colors.white),
-                    ),
+                    child: CustomText(text: "Register", fSize: 20),
                   ),
                 ],
               ),
@@ -66,7 +77,7 @@ class _RegScreenState extends State<RegScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 10,
             children: [
-              Text("Already Registered?"),
+              CustomText(text: "Already Registered?",fSize: 14),
               InkWell(
                 onTap: () {
                   Navigator.push(
@@ -75,7 +86,7 @@ class _RegScreenState extends State<RegScreen> {
                   );
                   //log("===");
                 },
-                child: Text("Sign in", style: TextStyle(color: Colors.blue)),
+                child: CustomText(text: "Sign in",fSize: 15,color: Colors.deepOrange),
               ),
             ],
           ),

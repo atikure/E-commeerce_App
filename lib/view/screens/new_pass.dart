@@ -78,7 +78,7 @@ class _SetNewPasswordScreenState extends State<SetNewPasswordScreen> {
                 suffixIcon: Icon(Icons.visibility_off_outlined),
               ),
 
-              // Confirm New
+              // Confirm New Password
               CustomTextField(
                 email: confirmPass,
                 hint: "Confirm New Password",

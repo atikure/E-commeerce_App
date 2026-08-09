@@ -28,7 +28,7 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: Center(child: Image.network("https://coderangon.com/frontend/assets/images/logo/lgo.png")),
+      body: Center(child: Image.network("https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR69li6sjc5mJIoDIp6AjlbwShapQzY6b4lGnUC2xVU_YJbT88VMBVeOunp&s=10")),
     );
   }
 }

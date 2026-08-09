@@ -11,6 +11,7 @@ class LoginScreen extends StatefulWidget {
   @override
   State<LoginScreen> createState() => _LoginScreenState();
 }
+
 class _LoginScreenState extends State<LoginScreen> {
   TextEditingController phone = TextEditingController();
   TextEditingController password = TextEditingController();
@@ -21,49 +22,59 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network("https://coderangon.com/frontend/assets/images/logo/lgo.png"),
-          CustomText(text: "Welcome Back!", fSize: 20,),
-          CustomText(text: " Sign in here to continue shopping",fSize: 15,),
+          Image.network(
+            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR69li6sjc5mJIoDIp6AjlbwShapQzY6b4lGnUC2xVU_YJbT88VMBVeOunp&s=10",
+            height: 200,
+          ),
+          CustomText(text: "Welcome Back!", fSize: 20),
+          CustomText(text: " Sign in here to continue shopping", fSize: 15),
           CustomTextField(email: phone, hint: "Enter your phone number"),
           CustomTextField(email: password, hint: "Password"),
           Container(
             alignment: Alignment.centerRight,
             child: InkWell(
-                onTap: (){
-                  //Navigator.push(context, MaterialPageRoute(builder: (context)=> RegScreen()));
+              onTap: () {
+                //Navigator.push(context, MaterialPageRoute(builder: (context)=> RegScreen()));
+                //log("===");
+              },
+              child: InkWell(
+                onTap: () {
                   //log("===");
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => ForgotScreen()),
+                  );
                 },
-                child:
-                InkWell(
-                  onTap: (){
-                    //log("===");
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> ForgotScreen()));
-                  },
-                  child: Text("Forgotten password?", style: TextStyle(color: Colors.blue),
-                  ),
-                ),
+                child: CustomText(text: "Forgotten password?",color: Colors.deepOrange,fSize: 12,),
+              ),
             ),
           ),
           InkWell(
-            onTap: (){
-              if(phone.text == "01764641399" && password.text == "1234"){
-                Navigator.push(context, MaterialPageRoute(builder: (context)=> Home(index: 0,)));
-              }
-              else{
+            onTap: () {
+              if (phone.text == "01764641399" && password.text == "1234") {
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => Home(index: 0)),
+                );
+              } else {
                 log("Wrong Phone Number & Password");
-                ScaffoldMessenger.of(context).showSnackBar(SnackBar(content:
-                Text("Wrong Phone Number & Password"),backgroundColor: Colors.blue,));
+                ScaffoldMessenger.of(context).showSnackBar(
+                  SnackBar(
+                    content: CustomText(text: "Wrong Phone Number & Password",fSize: 15,),
+                    backgroundColor: Colors.blue,
+                  ),
+                );
               }
             },
             child: Card(
-              margin: EdgeInsets.symmetric(horizontal: 20,vertical: 8),
-              color: Colors.blue,
+              margin: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+              color: Colors.deepOrange,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: Text("Sign In",style: TextStyle(color: Colors.white),),
+                    child: CustomText(text: "Sign In",fSize: 20,),
                   ),
                 ],
               ),
@@ -73,14 +84,24 @@ class _LoginScreenState extends State<LoginScreen> {
             mainAxisAlignment: MainAxisAlignment.center,
             spacing: 10,
             children: [
-              Text("Don't have an account?"),
+              CustomText(
+                text: "Don't have an account?",
+                fSize: 14,
+                color: Colors.black,
+              ),
               InkWell(
-                  onTap: (){
-                    Navigator.push(context, MaterialPageRoute(builder: (context)=> RegScreen()));
-                    //log("===");
-                  },
-                  child: Text("Sign Up", style: TextStyle(color: Colors.blue),
-                  )
+                onTap: () {
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => RegScreen()),
+                  );
+                  //log("===");
+                },
+                child: CustomText(
+                  text: "Sign Up",
+                  fSize: 15,
+                  color: Colors.deepOrange,
+                ),
               ),
             ],
           ),
@@ -89,4 +110,3 @@ class _LoginScreenState extends State<LoginScreen> {
     );
   }
 }
-

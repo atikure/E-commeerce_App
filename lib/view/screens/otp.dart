@@ -33,21 +33,21 @@ class _OtpScreenState extends State<OtpScreen> {
       appBar: AppBar(
         backgroundColor: Colors.white,
         leading: IconButton(
-          icon: const Icon(Icons.arrow_back, color: Colors.black),
+          icon:  Icon(Icons.arrow_back, color: Colors.black),
           onPressed: () => Navigator.pop(context),
         ),
       ),
       body: SafeArea(
         child: Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 24.0),
+          padding:  EdgeInsets.symmetric(horizontal: 24.0),
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
             children: [
-              const SizedBox(height: 40),
+               SizedBox(height: 40),
 
 
               // Title
-              const Text(
+               Text(
                 'Verify OTP',
                 style: TextStyle(
                   fontSize: 26,
@@ -55,7 +55,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   color: Colors.black,
                 ),
               ),
-              const SizedBox(height: 15),
+               SizedBox(height: 15),
 
 
               // Subtitle
@@ -64,11 +64,11 @@ class _OtpScreenState extends State<OtpScreen> {
                 fSize: 15,
                 color: Colors.black,
               ),
-              const SizedBox(height: 6),
+               SizedBox(height: 6),
 
 
               // Phone Number
-              const Text(
+               Text(
                 '+880 1764-641399',
                 style: TextStyle(
                   fontSize: 16,
@@ -76,7 +76,7 @@ class _OtpScreenState extends State<OtpScreen> {
                   color: Color(0xFFFF5722),
                 ),
               ),
-              const SizedBox(height: 40),
+               SizedBox(height: 40),
 
 
               // OTP Box
@@ -93,7 +93,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       keyboardType: TextInputType.number,
                       textAlign: TextAlign.center,
                       maxLength: 1,
-                      style: const TextStyle(
+                      style:  TextStyle(
                         fontSize: 22,
                         fontWeight: FontWeight.bold,
                         color: Colors.black,
@@ -107,7 +107,7 @@ class _OtpScreenState extends State<OtpScreen> {
                       },
                       decoration: InputDecoration(
                         counterText: '',
-                        contentPadding: const EdgeInsets.symmetric(
+                        contentPadding:  EdgeInsets.symmetric(
                           vertical: 18,
                         ),
                         border: OutlineInputBorder(
@@ -120,7 +120,7 @@ class _OtpScreenState extends State<OtpScreen> {
                         ),
                         focusedBorder: OutlineInputBorder(
                           borderRadius: BorderRadius.circular(12),
-                          borderSide: const BorderSide(
+                          borderSide:  BorderSide(
                             color: Color(0xFFFF5722),
                             width: 1.5,
                           ),
@@ -130,14 +130,14 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ),
               ),
-              const SizedBox(height: 30),
+               SizedBox(height: 30),
 
 
               // Resend Code & Timer
               Row(
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
-                  const Text(
+                   Text(
                     "Didn't receive code? ",
                     style: TextStyle(color: Colors.black, fontSize: 13),
                   ),
@@ -153,12 +153,12 @@ class _OtpScreenState extends State<OtpScreen> {
                   ),
                 ],
               ),
-              const SizedBox(height: 4),
-              const Text(
+               SizedBox(height: 4),
+               Text(
                 '(00:30)',
                 style: TextStyle(color: Colors.black, fontSize: 12),
               ),
-              const SizedBox(height: 100),
+               SizedBox(height: 100),
 
 
               //Verify
