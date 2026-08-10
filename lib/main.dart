@@ -3,6 +3,7 @@ import 'package:ecommerce_app/view/screens/forgot_pass.dart';
 import 'package:ecommerce_app/view/screens/home/home.dart';
 import 'package:ecommerce_app/view/screens/login.dart';
 import 'package:ecommerce_app/view/screens/new_pass.dart';
+import 'package:ecommerce_app/view/screens/order_page.dart';
 import 'package:ecommerce_app/view/screens/otp.dart';
 import 'package:ecommerce_app/view/screens/splash.dart';
 import 'package:flutter/material.dart';
