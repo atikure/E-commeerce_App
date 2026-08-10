@@ -28,8 +28,14 @@ class _LoginScreenState extends State<LoginScreen> {
           ),
           CustomText(text: "Welcome Back!", fSize: 20),
           CustomText(text: " Sign in here to continue shopping", fSize: 15),
-          CustomTextField(email: phone, hint: "Enter your phone number"),
-          CustomTextField(email: password, hint: "Password"),
+          CustomTextField(email: phone, hint: "Enter your phone number",
+              prefixIcon: Icon(Icons.phone)),
+          CustomTextField(
+            email: password,
+            hint: "Password",
+            prefixIcon: Icon(Icons.lock_outlined),
+            suffixIcon: Icon(Icons.visibility_off_outlined),
+          ),
           Container(
             alignment: Alignment.centerRight,
             child: InkWell(
@@ -45,7 +51,11 @@ class _LoginScreenState extends State<LoginScreen> {
                     MaterialPageRoute(builder: (context) => ForgotScreen()),
                   );
                 },
-                child: CustomText(text: "Forgotten password?",color: Colors.deepOrange,fSize: 12,),
+                child: CustomText(
+                  text: "Forgotten password?",
+                  color: Colors.deepOrange,
+                  fSize: 12,
+                ),
               ),
             ),
           ),
@@ -60,7 +70,10 @@ class _LoginScreenState extends State<LoginScreen> {
                 log("Wrong Phone Number & Password");
                 ScaffoldMessenger.of(context).showSnackBar(
                   SnackBar(
-                    content: CustomText(text: "Wrong Phone Number & Password",fSize: 15,),
+                    content: CustomText(
+                      text: "Wrong Phone Number & Password",
+                      fSize: 15,
+                    ),
                     backgroundColor: Colors.blue,
                   ),
                 );
@@ -74,7 +87,7 @@ class _LoginScreenState extends State<LoginScreen> {
                 children: [
                   Padding(
                     padding: const EdgeInsets.all(8.0),
-                    child: CustomText(text: "Sign In",fSize: 20,),
+                    child: CustomText(text: "Sign In", fSize: 20),
                   ),
                 ],
               ),
