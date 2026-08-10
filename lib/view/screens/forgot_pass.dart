@@ -1,6 +1,8 @@
+import 'otp.dart';
+import 'package:flutter/material.dart';
 import 'package:ecommerce_app/view/custom_widget/text.dart';
 import 'package:ecommerce_app/view/custom_widget/text_field.dart';
-import 'package:flutter/material.dart';
+
 
 class ForgotScreen extends StatefulWidget {
   const ForgotScreen({super.key});
@@ -12,7 +14,6 @@ class ForgotScreen extends StatefulWidget {
 class _ForgotScreenState extends State<ForgotScreen> {
   TextEditingController email = TextEditingController();
   bool phone = true;
-
   int? mLine;
 
   @override
@@ -27,25 +28,47 @@ class _ForgotScreenState extends State<ForgotScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(
-            "https://thumbs.dreamstime.com/b/forgot-password-vector-icon-white-background-277222632.jpg",
-            height: 150,
-            width: double.infinity,
+          // Lock Icon
+          Container(
+            width: 100,
+            height: 100,
+            decoration:  BoxDecoration(
+              color: Color(0xFFE8F5E9),
+              shape: BoxShape.circle,
+            ),
+            child:  Icon(
+              Icons.lock_clock_outlined,
+              size: 80,
+              color: Color(0xFF2E7D32),
+            ),
           ),
-          SizedBox(height: 50),
+          SizedBox(height: 24),
+
+              //Img
+          // Image.network(
+          //   "https://thumbs.dreamstime.com/b/forgot-password-vector-icon-white-background-277222632.jpg",
+          //   height: 150,
+          //   width: double.infinity,
+          // ),
+          // SizedBox(height: 50),
+
+          // Title
           CustomText(
             text: "Forgot password?",
             fSize: 30,
             fWeight: FontWeight.bold,
           ),
           SizedBox(height: 15),
+
+          // Subtitle
           CustomText(
             text:
                 "Enter the email or phone number associated with your account.",
             fSize: 17,
           ),
           SizedBox(height: 10),
-          // chatgpt
+
+          // Phone & Email Box
           Container(
             height: 50,
             decoration: BoxDecoration(
@@ -99,6 +122,8 @@ class _ForgotScreenState extends State<ForgotScreen> {
               ),
             ),
           ),
+
+          // Phone & Email Icon
           Padding(
             padding: EdgeInsets.all(8.0),
             child: Align(
@@ -111,8 +136,9 @@ class _ForgotScreenState extends State<ForgotScreen> {
             ),
           ),
 
+          //Send OTP
           InkWell(
-            onTap: () {},
+            onTap: () {Navigator.push(context, MaterialPageRoute(builder: (context)=> OtpScreen()));},
             child: Card(
               margin: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
               color: Colors.blue,
