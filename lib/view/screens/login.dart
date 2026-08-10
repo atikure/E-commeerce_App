@@ -22,14 +22,31 @@ class _LoginScreenState extends State<LoginScreen> {
       body: Column(
         mainAxisAlignment: MainAxisAlignment.center,
         children: [
-          Image.network(
-            "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR69li6sjc5mJIoDIp6AjlbwShapQzY6b4lGnUC2xVU_YJbT88VMBVeOunp&s=10",
-            height: 200,
+          Container(
+            width: 150,
+            height: 150,
+            decoration:  BoxDecoration(
+              color: Color(0xFFE8F5E9),
+              shape: BoxShape.circle,
+            ),
+            child:  Icon(
+              Icons.shopping_cart_outlined,
+              size: 90,
+              color: Color(0xFF2E7D32),
+            ),
           ),
+          SizedBox(height: 50),
+          // Image.network(
+          //   "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTCvzXQokFJEu_UZIi-N0f2s7mpeKEeYgrT6aMOaY348A&s=10",
+          //   height: 200,
+          // ),
           CustomText(text: "Welcome Back!", fSize: 20),
           CustomText(text: " Sign in here to continue shopping", fSize: 15),
-          CustomTextField(email: phone, hint: "Enter your phone number",
-              prefixIcon: Icon(Icons.phone)),
+          CustomTextField(
+            email: phone,
+            hint: "Enter your phone number",
+            prefixIcon: Icon(Icons.phone),
+          ),
           CustomTextField(
             email: password,
             hint: "Password",
