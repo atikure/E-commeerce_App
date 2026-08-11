@@ -1,4 +1,5 @@
 
+import 'package:ecommerce_app/view/custom_widget/custom_Card.dart';
 import 'package:ecommerce_app/view/custom_widget/text.dart';
 import 'package:flutter/material.dart';
 
@@ -29,7 +30,7 @@ class _OrderScreenState extends State<OrderScreen> {
           actions: [
             Icon(Icons.search, size: 25),
             SizedBox(width: 10),
-            Icon(Icons.shopping_cart_outlined, size: 25),
+            CustomCard(),
           ],
           bottom: TabBar(
             tabs: [
