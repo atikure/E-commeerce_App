@@ -5,7 +5,6 @@ import '../../custom_widget/custom_button.dart';
 import 'package:ecommerce_app/view/screens/details/widget/image_slider.dart';
 import 'package:ecommerce_app/view/screens/details/widget/specification_text.dart';
 
-
 class Details extends StatefulWidget {
   const Details({super.key, required this.index});
   final int index;
@@ -46,7 +45,8 @@ class _DetailsState extends State<Details> {
                     spacing: 5,
                     children: [
                       Icon(Icons.star, color: Colors.purple),
-                      CustomText( //customtext
+                      CustomText(
+                        //customtext
                         text: "4.5",
                         fWeight: FontWeight.bold,
                         color: Colors.red,
@@ -94,7 +94,10 @@ class _DetailsState extends State<Details> {
                         i: Icons.speaker_notes_outlined,
                         s: 'Super Extra Bass',
                       ),
-                      featuredText(i: Icons.timer_sharp, s: 'Up to 15H Playback'),
+                      featuredText(
+                        i: Icons.timer_sharp,
+                        s: 'Up to 15H Playback',
+                      ),
                       SizedBox(width: 170),
                       featuredText(
                         i: Icons.headphones_outlined,
@@ -108,7 +111,7 @@ class _DetailsState extends State<Details> {
                   ),
                   SizedBox(height: 10),
                   Divider(color: Colors.black12),
-                  SizedBox(height: 15,),
+                  SizedBox(height: 15),
                   CustomText(
                     text: "Description",
                     fWeight: FontWeight.bold,
@@ -117,17 +120,21 @@ class _DetailsState extends State<Details> {
                   CustomText(
                     maxLine: 20,
                     text:
-                    "We have provided the fastest way to copy the Bangladeshi taka symbol and we also provide a download option for the symbol to be used anywhere as text.",
+                        "We have provided the fastest way to copy the Bangladeshi taka symbol and we also provide a download option for the symbol to be used anywhere as text.",
                     fSize: 15,
                   ),
-                  SizedBox(height: 17,),
-                  SpecificationText(title: 'Brand', details: 'boAt',),
-                  SpecificationText(title: 'Model', details: 'Rockers 450 Pro',),
-                  SpecificationText(title: 'Battery Life', details: 'Up to 15 Hours',),
-                  SpecificationText(title: 'Connectivity ', details: 'Bluetooth 5.0',),
-                  SpecificationText(title: 'Warranty', details: '1 Year',),
-
-
+                  SizedBox(height: 17),
+                  SpecificationText(title: 'Brand', details: 'boAt'),
+                  SpecificationText(title: 'Model', details: 'Rockers 450 Pro'),
+                  SpecificationText(
+                    title: 'Battery Life',
+                    details: 'Up to 15 Hours',
+                  ),
+                  SpecificationText(
+                    title: 'Connectivity ',
+                    details: 'Bluetooth 5.0',
+                  ),
+                  SpecificationText(title: 'Warranty', details: '1 Year'),
                 ],
               ),
             ),
@@ -139,8 +146,20 @@ class _DetailsState extends State<Details> {
         child: Row(
           spacing: 20,
           children: [
-            Expanded(child: CustomButton( title: 'Add Oder', onTap: () {  }, isEmptyBG: true,)),
-            Expanded(child: CustomButton (onTap: (){},  title: 'Buy Now', isEmptyBG: false,)),
+            Expanded(
+              child: CustomButton(
+                title: 'Add Oder',
+                onTap: () {},
+                isEmptyBG: true,
+              ),
+            ),
+            Expanded(
+              child: CustomButton(
+                onTap: () {},
+                title: 'Buy Now',
+                isEmptyBG: false,
+              ),
+            ),
           ],
         ),
       ),

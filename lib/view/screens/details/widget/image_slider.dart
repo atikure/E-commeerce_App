@@ -3,11 +3,8 @@ import 'package:flutter/material.dart';
 
 import '../../../custom_widget/text.dart';
 
-
 class productImageSlider extends StatelessWidget {
-  const productImageSlider({
-    super.key,
-  });
+  const productImageSlider({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -24,20 +21,26 @@ class productImageSlider extends StatelessWidget {
           builder: (BuildContext context) {
             return Stack(
               children: [
-                Container(
-                  alignment: Alignment.center,
-                  width: MediaQuery.of(context).size.width,
-                  margin: EdgeInsets.symmetric(horizontal: 5.0),
-                  decoration: BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.circular(10),
-                    image: DecorationImage(
-                      image: NetworkImage(
-                        "https://images.philips.com/is/image/philipsconsumer/491e2dd5e0d1466f8ee5b0cd010451ae?wid=700&hei=700&",
+                Stack(
+                  alignment: AlignmentGeometry.bottomCenter,
+                  children: [
+                    Container(
+                      alignment: Alignment.center,
+                      width: MediaQuery.of(context).size.width,
+                      margin: EdgeInsets.symmetric(horizontal: 5.0),
+                      decoration: BoxDecoration(
+                        color: Colors.white,
+                        borderRadius: BorderRadius.circular(10),
+                        image: DecorationImage(
+                          image: NetworkImage(
+                            "https://images.philips.com/is/image/philipsconsumer/491e2dd5e0d1466f8ee5b0cd010451ae?wid=700&hei=700&",
+                          ),
+                          fit: BoxFit.contain,
+                        ),
                       ),
-                      fit: BoxFit.contain,
                     ),
-                  ),
+                    CustomText(text: "$index/5"),
+                  ],
                 ),
                 Card(
                   color: Colors.red,
